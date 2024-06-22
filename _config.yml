@@ -1,7 +1,7 @@
 # Site settings
 
 # NB! Set your site's url, otherwise nothing will work
-url: "https://https://sunhyunmin.github.io/"
+url: "https://sunhyunmin.github.io/"
 
 # Google tracking id
 # google-tracking-id: "UA-XXXXXXXX-X"
@@ -11,10 +11,10 @@ url: "https://https://sunhyunmin.github.io/"
 #############
 lang: "en"
 author: "Sunhyun Min"
-title: "{ John Smith }"
-description: "Blog and website of John Smith, blogging mainly for tech. Opinions expressed are mine."
-keywords: "smith, jones, personal, jekyll, theme"
-favicon: "/img/favicon.ico"
+title: "Sunhyun Min"
+description: "Sunhyun Min's Homepage"
+# keywords: "smith, jones, personal, jekyll, theme"
+# favicon: "/img/favicon.ico"
 ################
 # Header layout #
 ################
