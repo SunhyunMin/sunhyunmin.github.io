@@ -32,9 +32,9 @@ start-delay: 150
 delete-delay: 5000
 lines: # You can add HTML Tags in the Text
   - text: "Sunhyun MIN"
-  - text: "Showcasing MusIc N cognition"
+  - text: "Studying MusIc N cognition"
   - text: "Sprouting More Ideas with Novelties"
-me-img: "/img/jetpacktocat.png"
+# me-img: "/img/jetpacktocat.png"
 # To use github profile pic uncomment the following line and replace 'user_name'
 # with your github user name.
 
