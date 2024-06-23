@@ -23,25 +23,6 @@ black-favicon: "/img/black-lab-glass.ico"
 ##############################
 # Dynamic Text on the Header #
 ##############################
-<link rel="stylesheet" href="style.css"> 
-
-<!-- body 섹션에 타이핑 애니메이션 요소와 스크립트 추가 -->
-<div id="typing-container" class="typing-animation"></div>
-<body>
-    <div id="typing-container" class="typing-animation"></div>
-
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script>
-        var options = {
-            strings: ["Hi", "Yes!"],
-            typeSpeed: 50,
-            backSpeed: 50,
-            loop: true
-        };
-
-        var typed = new Typed("#typing-container", options);
-    </script>
-</body>
 
 dynamic-typing: True
 shuffle: True # Shuffle the lines.
