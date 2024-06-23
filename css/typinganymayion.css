@@ -1,0 +1,6 @@
+/* style.css */
+.typing-animation {
+  font-family: 'Arial', sans-serif; /* 원하는 폰트 패밀리로 변경 */
+  font-size: 20px; /* 원하는 폰트 크기로 변경 */
+  color: #333; /* 원하는 폰트 색상으로 변경 */
+}
