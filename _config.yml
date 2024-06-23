@@ -94,7 +94,7 @@ events:
     date: "2024 - Present (1st year)"
     description: "M.S. Student in Metabiohealth @SKKU/IBS, BST Lab."
 # First image of the Timeline
-timeline-img: "/img/timeline/default.png"
+# timeline-img: "/img/timeline/default.png"
 ###########
 # Contact #
 ###########
@@ -109,22 +109,22 @@ pgp: False
 # This works best when your author blurb image has a transparent background, or matches your site background color.
 
 # if the author_blurb is not set, then this feature is skipped
-author_blurb:
-  "John Smith is an awesome person. He lives in Flatland, where he works on two-dimensional
-  engineering projects. In his spare time, John likes to eat cotton candy."
-author_blurb_image: "/img/author.png"
+# author_blurb:
+#  "John Smith is an awesome person. He lives in Flatland, where he works on two-dimensional
+#  engineering projects. In his spare time, John likes to eat cotton candy."
+# author_blurb_image: "/img/author.png"
 ##################
 # Social Buttons #
 ##################
-social:
-  - icon: "github"
-    url: "https://github.com/le4ker/personal-jekyll-theme"
-  - icon: "linkedin-in"
-    url: "https://www.linkedin.com"
-  - icon: "x-twitter"
-    url: "https://twitter.com/"
-  - icon: "rss"
-    url: "https://le4ker.github.io/personal-jekyll-theme/feed.xml"
+# social:
+#  - icon: "github"
+#    url: "https://github.com/le4ker/personal-jekyll-theme"
+#  - icon: "linkedin-in"
+#    url: "https://www.linkedin.com"
+#  - icon: "x-twitter"
+#    url: "https://twitter.com/"
+#  - icon: "rss"
+#    url: "https://le4ker.github.io/personal-jekyll-theme/feed.xml"
 ############
 # 404 page #
 ############
@@ -136,7 +136,7 @@ err-404-img: "/img/labtocat.png"
 # Sections shown in the index page
 pages_list:
   About: "about"
-  Blog: "latest-post"
+  # Blog: "latest-post"
   Timeline: "timeline"
   Contact: "contact"
 # Exclusion list from the generated _site
