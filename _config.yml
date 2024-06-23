@@ -33,7 +33,7 @@ black-favicon: "/img/black-lab-glass.ico"
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
         var options = {
-            strings: ["여기서 폰트 수정을 할 수 있어?", "당연하죠!"],
+            strings: ["Hi", "Yes!"],
             typeSpeed: 50,
             backSpeed: 50,
             loop: true
