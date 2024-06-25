@@ -2,19 +2,11 @@
 
 <ul class="list-inline social-buttons">
   {% for network in site.social %}
-    {% if network.icon== "rss" %}
-      <li>
+    <li>
       <a href="{{ network.url }}" target="_blank">
-      <i class="fa-solid fa-{{network.icon}}"></i>
+        <i class="fa-brands fa-{{ network.icon }}"></i>
       </a>
-      </li>
-    {% else %}
-      <li>
-        <a href="{{ network.url }}" target="_blank">
-          <i class="fa-brands fa-{{ network.icon}}"></i>
-        </a>
-      </li>
-    {% endif %}
+    </li>
   {% endfor %}
 </ul>
 
