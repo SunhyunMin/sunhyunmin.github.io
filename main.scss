@@ -1,10 +1,5 @@
-/* main.scss */
-.fade-in {
-  opacity: 0;
-  animation: fadeIn ease 2s;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
+@import 'reset';
+@import 'normalize';
+@import 'variables';
+@import 'mixins';
+@import 'base';
