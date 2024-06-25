@@ -12,7 +12,7 @@ url: "https://sunhyunmin.github.io/"
 lang: "en"
 author: "Sunhyun Min"
 title: "Sunhyun Min"
-description: "Welcome to Sunhyun Min's personal blog. Discover insights on music cognition and more."
+description: "Sunhyun Min's Homepage"
 # keywords: "smith, jones, personal, jekyll, theme"
 favicon: "/img/favicon.ico"
 ################
@@ -26,17 +26,16 @@ black-favicon: "/img/black-lab-glass.ico"
 
 
 dynamic-typing: True
-shuffle: True
+shuffle: True # Shuffle the lines.
 loop: True
-loop-count: False
-type-speed: 50
-start-delay: 100
-delete-delay: 3000
-lines: 
+loop-count: False # Set False for infinite loop, or set any number for finite loop.
+type-speed: 15
+start-delay: 150
+delete-delay: 5000
+lines: # You can add HTML Tags in the Text
   - text: "Sunhyun MIN"
-  - text: "Exploring Music Cognition"
-  - text: "Innovating with Ideas"
-
+  - text: "Studying MusIc N cognition"
+  - text: "Sprouting More Ideas with Novelties"
 # me-img: "/img/jetpacktocat.png"
 # To use github profile pic uncomment the following line and replace 'user_name'
 # with your github user name.
@@ -53,8 +52,8 @@ lines:
 ##############################
 # Color the browser elements #
 ##############################
-color-browser: "#ffffff"
-apple-status-bar-style: "default"
+color-browser: "#000000"
+apple-status-bar-style: "black"
 ################
 # Web app mode #
 ################
@@ -119,14 +118,7 @@ pgp: False
 ##################
 # Social Buttons #
 ##################
-social:
-  - icon: "github"
-    url: "https://github.com/sunhyunmin"
-  - icon: "linkedin-in"
-    url: "https://linkedin.com/in/sunhyunmin"
-  - icon: "twitter"
-    url: "https://twitter.com/sunhyunmin"
-
+# social:
 #  - icon: "github"
 #    url: "https://github.com/le4ker/personal-jekyll-theme"
 #  - icon: "linkedin-in"
