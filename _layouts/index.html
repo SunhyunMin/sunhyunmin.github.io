@@ -1,33 +1,41 @@
-<!-- Index Layout Start -->
-
-<!doctype html>
-<html lang="{{ site.lang }}">
-
-  {% include head.html %}
-
-  <body
-    id="page-top"
-    data-spy="scroll"
-    data-target=".navbar-fixed-top"
-    data-offset="151"
-  >
-    {% include navigation.html %} 
-
-    {% include header.html %} 
-
-    {% for p in site.pages_list %} 
-      {% for page in site.pages %} 
-        {% if p[1] == page.section-type %} 
-          {% include {{ page.path }} %} 
-        {% endif %} 
-      {% endfor %}
-    {% endfor %} 
-
-    {% include footer.html %} 
-
-    {% include js.html %}
-
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunhyun Min</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sunhyun Min</h1>
+        <p>Exploring Music Cognition & Innovation</p>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>When I was young, I discovered my ability to improvise music...</p>
+        </section>
+        <section id="projects">
+            <h2>MusIc N Cognition</h2>
+            <p>Some may question researching music cognition since it isn’t medical...</p>
+        </section>
+        <section id="timeline">
+            <h2>Timeline</h2>
+            <ul>
+                <li>2016 - 2022: B.M. in Composition and B.A. in Psychology @Ewha Womans Univ.</li>
+                <li>2022 - 2023: 7T Project Manager @SKKU/IBS, PECON Lab.</li>
+                <li>2024 - PRESENT (1ST YEAR): M.S. Student in Metabiohealth @SKKU/IBS, BST Lab.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>© Sunhyun Min 2024. All Rights Reserved.</p>
+        <nav>
+            <a href="https://github.com">GitHub</a>
+            <a href="https://linkedin.com">LinkedIn</a>
+            <a href="https://twitter.com">Twitter</a>
+        </nav>
+    </footer>
+</body>
 </html>
-
-<!-- Index Layout End -->
