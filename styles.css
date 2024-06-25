@@ -12,6 +12,68 @@ header {
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
+    transition: background 0.5s ease-in-out;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+#event-poster {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#event-poster h2 {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    #event-poster h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* 애니메이션 효과 */
+header:hover {
+    background: #2c3e50;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
 }
 
 header h1 {
