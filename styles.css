@@ -28,6 +28,30 @@ section {
     margin-bottom: 20px;
 }
 
+#event-poster {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#event-poster h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.download-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}
+
 section h2 {
     color: #35424a;
 }
