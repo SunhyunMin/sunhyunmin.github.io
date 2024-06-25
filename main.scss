@@ -30,31 +30,48 @@ section {
     margin-bottom: 20px;
 }
 
-#event-poster {
+.even-poster {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.even-poster img {
+    width: 48%;
+    height: auto;
+    margin: 1%;
+}
+
+.cv-download {
     text-align: center;
-    margin: 20px 0;
+    margin-top: 20px;
 }
 
-#event-poster h2 {
-    font-size: 2em;
-    margin: 10px 0;
+.cv-download .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
-/* 반응형 디자인 */
+.cv-download .btn:hover {
+    background-color: #0056b3;
+}
+
 @media (max-width: 768px) {
-    main {
-        padding: 10px;
+    .even-poster {
+        flex-direction: column;
+        align-items: center;
     }
 
-    header {
-        padding: 10px 0;
-    }
-
-    #event-poster h2 {
-        font-size: 1.5em;
+    .even-poster img {
+        width: 80%;
+        margin: 10px 0;
     }
 }
-
 /* 애니메이션 효과 */
 header:hover {
     background: #2c3e50;
