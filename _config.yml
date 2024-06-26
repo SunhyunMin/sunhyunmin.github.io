@@ -86,7 +86,7 @@ syntax-highlight: True
 # Timeline #
 ############
 events:
-  - timeline-image: "/img/timeline/spidertocat.png"
+  - image: "/img/timeline/spidertocat.png"
     date: "2016 - 2022"
     description: "B.M. in Composition and B.A. in Psychology @Ewha Womans Univ."
   - image: "/img/timeline/baracktocat.jpg"
