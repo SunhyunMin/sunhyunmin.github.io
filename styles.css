@@ -79,12 +79,13 @@ footer nav a:hover {
 
 .even-poster {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 .even-poster img {
-    max-width: 45%;
+    width: 100%;
+    max-width: 1280px;
     height: auto;
 }
 
@@ -104,4 +105,18 @@ footer nav a:hover {
 
 .cv-download .btn:hover {
     background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .even-poster img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .even-poster img {
+        width: 100%;
+        max-width: 100%;
+    }
 }
