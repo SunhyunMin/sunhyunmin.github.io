@@ -130,3 +130,39 @@ footer nav a:hover {
         max-width: 100%;
     }
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    text-align: center;
+    padding: 1em;
+    background: #f4f4f4;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.main-poster {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive layout for smaller devices */
+@media (max-width: 600px) {
+    header, footer {
+        padding: 0.5em;
+    }
+
+    main {
+        padding: 0.5em;
+    }
+}
