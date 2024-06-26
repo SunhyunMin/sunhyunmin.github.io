@@ -1,36 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>My Website</title>
-</head>
-<body>
-    <header>
-        <h1>Welcome to My Website</h1>
-    </header>
-    <main>
-        <section id="event-poster">
-            <h2>Main Event Poster</h2>
-            <div class="even-poster">
-                <img src="img/poster1.jpg" alt="Main Poster" class="main-poster">
-            </div>
-        </section>
-        <section>
-            <h2>About the Event</h2>
-            <p>Details about the event will go here.</p>
-        </section>
-        <div class="cv-download">
-            <a href="Poster_OHBM2024_SunhyunMin.pdf" class="btn download-btn">Download CV</a>
-        </div>
-    </main>
-    <footer>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
-    </footer>
-</body>
+<!doctype html>
+<html lang="{{ site.lang }}">
+
+  {% include head.html %}
+
+  <body
+    id="page-top"
+    data-spy="scroll"
+    data-target=".navbar-fixed-top"
+    data-offset="151"
+  >
+    {% include navigation.html %} 
+
+    {% include header.html %} 
+
+    {% for p in site.pages_list %} 
+      {% for page in site.pages %} 
+        {% if p[1] == page.section-type %} 
+          {% include {{ page.path }} %} 
+        {% endif %} 
+      {% endfor %}
+    {% endfor %} 
+
+<div class="even-poster">
+    <img src="img/poster1.jpg" alt="Poster 1">
+</div>
+<div class="cv-download">
+    <a href="OHBM2024.musicalcomplexity.pdf" class="btn">CV DOWNLOAD</a>
+</div>
+
+    {% include footer.html %} 
+
+    {% include js.html %}
+  </body>
 </html>
