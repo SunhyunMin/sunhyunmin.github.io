@@ -46,7 +46,7 @@ section {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    display: inline-block; /* Ensure it is not displayed as a block element */
+    display: inline-block;
 }
 
 .download-btn:hover {
@@ -80,14 +80,14 @@ footer nav a:hover {
 .even-poster {
     display: flex;
     justify-content: center;
-    align-items: center;
     margin-bottom: 20px;
 }
 
 .even-poster img {
     width: 100%;
-    max-width: 1280px;
+    max-width: 100%;
     height: auto;
+    object-fit: contain;
 }
 
 .cv-download {
