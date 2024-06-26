@@ -1,97 +1,71 @@
-
+/* 기본 스타일 */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-    transition: background 0.5s ease-in-out;
-}
-
-header h1 {
-    margin: 0;
-}
-
-main {
-    padding: 20px;
-    max-width: 800px;
+#wrap {
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-section {
-    margin-bottom: 20px;
+#header, #footer {
+    text-align: center;
+    padding: 10px 0;
 }
 
-.even-poster {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
+#content {
+    margin: 20px 0;
 }
 
-.even-poster img {
-    width: 48%;
+img {
+    max-width: 100%;
     height: auto;
-    margin: 1%;
+}
+
+/* 포스터 이미지를 위한 추가 스타일 */
+.poster {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    #wrap {
+        padding: 0 10px;
+    }
+
+    .poster {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* 추가 스타일 */
+.even-poster {
+    text-align: center;
+    margin: 20px 0;
 }
 
 .cv-download {
     text-align: center;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .cv-download .btn {
-    display: inline-block;
-    padding: 10px 20px;
     background-color: #007bff;
     color: white;
+    padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
 }
 
 .cv-download .btn:hover {
     background-color: #0056b3;
-}
-
-@media (max-width: 768px) {
-    .even-poster img {
-        width: 100%;
-        margin: 5px 0;
-    }
-}
-/* 애니메이션 효과 */
-header:hover {
-    background: #2c3e50;
-}
-
-/* 링크와 버튼 시각적 효과 추가 */
-a {
-    text-decoration: none;
-    color: #35424a;
-    transition: color 0.3s ease-in-out;
-}
-
-a:hover {
-    color: #2980b9;
-}
-
-button {
-    background: #35424a;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-}
-
-button:hover {
-    background: #2980b9;
 }
