@@ -1,57 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>My Website</title>
-</head>
-<body>
-    <header>
-        <h1>Welcome to My Website</h1>
-    </header>
-    <main>
-        <img src="img/poster1.jpg" alt="Main Poster" class="main-poster">
-        <!-- Other content -->
-    </main>
-    <footer>
-        <p>Footer content here.</p>
-    </footer>
-</body>
-</html>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
 
-<!doctype html>
-<html lang="{{ site.lang }}">
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
 
-  {% include head.html %}
+header h1 {
+    margin: 0;
+}
 
-  <body
-    id="page-top"
-    data-spy="scroll"
-    data-target=".navbar-fixed-top"
-    data-offset="151"
-  >
-    {% include navigation.html %} 
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
-    {% include header.html %} 
+section {
+    margin-bottom: 20px;
+}
 
-    {% for p in site.pages_list %} 
-      {% for page in site.pages %} 
-        {% if p[1] == page.section-type %} 
-          {% include {{ page.path }} %} 
-        {% endif %} 
-      {% endfor %}
-    {% endfor %} 
+#event-poster {
+    text-align: center;
+    margin: 20px 0;
+}
 
-<div class="even-poster">
-    <img src="img/poster1.jpg" alt="Poster 1">
-</div>
-<div class="cv-download">
-    <a href="Poster_OHBM2024_SunhyunMin.pdf" class="btn">CV DOWNLOAD</a>
-</div>
+#event-poster h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
 
-    {% include footer.html %} 
+.download-btn {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
 
-    {% include js.html %}
-  </body>
-</html>
+.download-btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+section h2 {
+    color: #35424a;
+}
+
+footer {
+    background: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+footer nav a {
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
+}
+
+.even-poster {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.even-poster img {
+    width: 100%;
+    max-width: 1280px;
+    height: auto;
+    object-fit: contain;
+}
+
+.cv-download {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cv-download .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.cv-download .btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .even-poster img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .even-poster img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
