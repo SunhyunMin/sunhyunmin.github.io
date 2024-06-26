@@ -140,7 +140,7 @@ pages_list:
   About: "about"
   # Blog: "latest-post"
   Timeline: "timeline"
-  Contact: "contact"
+  Contact: "contact & CV"
 # Exclusion list from the generated _site
 exclude:
   - LICENSE
