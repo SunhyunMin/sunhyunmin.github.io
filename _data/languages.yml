@@ -15,12 +15,12 @@ en:
     research_label: "Research"
   header:
     lines:
-      - "Sunhyun MIN"
+      - "Sunhyun Min"
       - "Studying MusIc N cognition"
       - "Sprouting More Ideas with Novelties"
 
 ko:
-  site_title: "Sunhyun MIN"
+  site_title: "Sunhyun Min"
   nav:
     about: "소개"
     timeline: "타임라인"
@@ -28,14 +28,14 @@ ko:
   sections:
     about_title: "소개"
     timeline_title: "타임라인"
-    contact_title: "이력서 및 연락처"
-  cv_download: "이력서 다운로드"
+    contact_title: "CV & Contact"
+  cv_download: "Download CV"
   contact:
     email_label: "이메일"
-    lab_label: "연구실"
+    lab_label: "Lab"
     research_label: "연구분야"
   header:
     lines:
-      - "Sunhyun MIN"
+      - "Sunhyun Min"
       - "음악과 인지를 연구합니다"
       - "새로움으로 더 많은 아이디어를 만듭니다"
