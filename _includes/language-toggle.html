@@ -1,8 +1,8 @@
 <!-- Language Toggle -->
 <div class="language-toggle">
-  <a href="#" onclick="toggleLanguage('en')" class="lang-btn" id="lang-en">EN</a>
+  <a href="#" onclick="toggleLanguage('en'); return false;" class="lang-btn" id="lang-en">EN</a>
   <span class="lang-separator">|</span>
-  <a href="#" onclick="toggleLanguage('ko')" class="lang-btn" id="lang-ko">한국어</a>
+  <a href="#" onclick="toggleLanguage('ko'); return false;" class="lang-btn" id="lang-ko">한국어</a>
 </div>
 
 <style>
@@ -15,6 +15,7 @@
   padding: 8px 15px;
   border-radius: 20px;
   backdrop-filter: blur(10px);
+  white-space: nowrap; /* keep EN | 한국어 in one line */
 }
 
 .lang-btn {
@@ -35,42 +36,94 @@
   margin: 0 8px;
 }
 
+/* Hide KO content by default; JS will reveal based on preference */
+[data-lang="ko"] { display: none; }
+
 @media (max-width: 768px) {
   .language-toggle {
-    top: 10px;
+    top: 60px; /* below navbar */
     right: 10px;
-    padding: 6px 12px;
+    padding: 6px 10px;
   }
+  .lang-btn {
+    font-size: 0.85rem;
+    padding: 2px 4px; /* increase touch target slightly */
+  }
+  .lang-separator { margin: 0 6px; }
 }
 </style>
 
+<!-- i18n data injected as raw JSON to avoid JS lint errors -->
+<script id="i18n-data" type="application/json">
+{{ site.data.languages | jsonify }}
+</script>
+
 <script>
-// Simple language toggle functionality
+// Simple language toggle functionality with i18n text injection
+// Parse translations from the JSON script tag
+var TRANSLATIONS = (function () {
+  try { return JSON.parse(document.getElementById('i18n-data').textContent); }
+  catch (e) { return {}; }
+})();
+
+function getNested(obj, path) {
+  try {
+    return path.split('.').reduce(function (acc, key) { return acc && acc[key]; }, obj);
+  } catch (e) { return undefined; }
+}
+
+function applyTranslations(lang) {
+  // Update any elements with data-i18n="key.path"
+  document.querySelectorAll('[data-i18n]').forEach(function (el) {
+    var key = el.getAttribute('data-i18n');
+    var txt = getNested(TRANSLATIONS[lang], key);
+    if (typeof txt === 'string') {
+      el.textContent = txt;
+    }
+  });
+}
+
 function toggleLanguage(lang) {
-  // Store language preference
-  localStorage.setItem('preferred-language', lang);
-  
-  // Update active state
-  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-  document.getElementById('lang-' + lang).classList.add('active');
-  
-  // Simple implementation - you can expand this for full i18n
-  if (lang === 'ko') {
-    // Show Korean elements if they exist
-    document.querySelectorAll('[data-lang="ko"]').forEach(el => el.style.display = 'block');
-    document.querySelectorAll('[data-lang="en"]').forEach(el => el.style.display = 'none');
-  } else {
-    // Show English elements
-    document.querySelectorAll('[data-lang="en"]').forEach(el => el.style.display = 'block');
-    document.querySelectorAll('[data-lang="ko"]').forEach(el => el.style.display = 'none');
+  try {
+    // Store preference
+    localStorage.setItem('preferred-language', lang);
+
+    // Set <html lang>
+    document.documentElement.setAttribute('lang', lang);
+
+    // Update active state
+    document.querySelectorAll('.lang-btn').forEach(function (btn) { btn.classList.remove('active'); });
+    var activeBtn = document.getElementById('lang-' + lang);
+    if (activeBtn) activeBtn.classList.add('active');
+
+    // Show/hide language-specific content blocks
+    if (lang === 'ko') {
+      document.querySelectorAll('[data-lang="ko"]').forEach(function (el) { el.style.display = 'block'; });
+      document.querySelectorAll('[data-lang="en"]').forEach(function (el) { el.style.display = 'none'; });
+    } else {
+      document.querySelectorAll('[data-lang="en"]').forEach(function (el) { el.style.display = 'block'; });
+      document.querySelectorAll('[data-lang="ko"]').forEach(function (el) { el.style.display = 'none'; });
+    }
+
+    // Apply translated texts
+    if (TRANSLATIONS && TRANSLATIONS[lang]) {
+      applyTranslations(lang);
+    }
+
+    // Re-init header typed text if available
+    if (typeof window.reinitTyped === 'function') {
+      window.reinitTyped(lang);
+    }
+
+    console.log('Language switched to:', lang);
+  } catch (e) {
+    console.warn('Language switch error:', e);
   }
-  
-  console.log('Language switched to:', lang);
 }
 
 // Initialize language on page load
-document.addEventListener('DOMContentLoaded', function() {
-  const savedLang = localStorage.getItem('preferred-language') || 'en';
+document.addEventListener('DOMContentLoaded', function () {
+  var savedLang = localStorage.getItem('preferred-language') || 'en';
   toggleLanguage(savedLang);
 });
 </script>

@@ -13,6 +13,11 @@ en:
     email_label: "Email"
     lab_label: "Lab"
     research_label: "Research"
+  header:
+    lines:
+      - "Sunhyun MIN"
+      - "Studying MusIc N cognition"
+      - "Sprouting More Ideas with Novelties"
 
 ko:
   site_title: "민선현"
@@ -29,3 +34,8 @@ ko:
     email_label: "이메일"
     lab_label: "연구실"
     research_label: "연구분야"
+  header:
+    lines:
+      - "민선현"
+      - "음악과 인지를 연구합니다"
+      - "새로움으로 더 많은 아이디어를 만듭니다"

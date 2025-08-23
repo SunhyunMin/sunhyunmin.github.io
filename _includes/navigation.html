@@ -16,7 +16,7 @@
             {% if site.black-favicon %}
               <img src="{{site.url}}{{ site.black-favicon }}" alt="">
             {% endif %}
-            {{ site.title }}
+            <span data-i18n="site_title">{{ site.title }}</span>
           </div>
         </a>
     </div>
@@ -28,7 +28,17 @@
           <!-- Scroll to section for each page in index -->
           {% for p in site.pages_list %}
             <li>
-              <a class="page-scroll" href="#{{ p[1] }}"> {{p[0]}} </a>
+              <a class="page-scroll" href="#{{ p[1] }}">
+                {% if p[1] == "about" %}
+                  <span data-i18n="nav.about"> {{ p[0] }} </span>
+                {% elsif p[1] == "timeline" %}
+                  <span data-i18n="nav.timeline"> {{ p[0] }} </span>
+                {% elsif p[1] == "contact" %}
+                  <span data-i18n="nav.contact"> {{ p[0] }} </span>
+                {% else %}
+                  {{ p[0] }}
+                {% endif %}
+              </a>
             </li>
           {% endfor %}
 
@@ -43,7 +53,17 @@
                 <a href="{{site.url}}/blog/"> {{p[0]}} </a>
               {% endif %}
             {% else %}
-                <a href="{{site.url}}/#{{ p[1] }}"> {{p[0]}} </a>
+                <a href="{{site.url}}/#{{ p[1] }}">
+                  {% if p[1] == "about" %}
+                    <span data-i18n="nav.about"> {{ p[0] }} </span>
+                  {% elsif p[1] == "timeline" %}
+                    <span data-i18n="nav.timeline"> {{ p[0] }} </span>
+                  {% elsif p[1] == "contact" %}
+                    <span data-i18n="nav.contact"> {{ p[0] }} </span>
+                  {% else %}
+                    {{ p[0] }}
+                  {% endif %}
+                </a>
             {% endif %}
             </li>
           {% endfor %}

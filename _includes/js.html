@@ -91,13 +91,45 @@ function trackDownload(type, format) {
     type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js"
   ></script>
+  <script type="application/json" id="typed-config">
+  {
+    "typeSpeed": {{ site.type-speed | jsonify }},
+    "backDelay": {{ site.delete-delay | jsonify }},
+    "startDelay": {{ site.start-delay | jsonify }},
+    "loop": {{ site.loop | jsonify }},
+    "loopCount": {{ site.loop-count | jsonify }},
+    "shuffle": {{ site.shuffle | jsonify }}
+  }
+  </script>
+  <script type="application/json" id="header-fallback-lines">{{ site.lines | map: 'text' | jsonify }}</script>
 
   <script type="text/javascript">
 
-    var myQuotes =  new Array();
-    {% for line in site.lines %}
-      myQuotes.push("{{ line.text }}");
-    {% endfor %}
+    // Build fallback quotes from _config.yml (parsed from JSON script block)
+    var fallbackQuotes = [];
+    (function(){
+      var fEl = document.getElementById('header-fallback-lines');
+      try { fallbackQuotes = fEl ? JSON.parse(fEl.textContent) : []; }
+      catch(e) { fallbackQuotes = []; }
+    })();
+
+    // Load typed config JSON
+    var __TYPED_CFG__ = {};
+    (function(){
+      var cfgEl = document.getElementById('typed-config');
+      try { __TYPED_CFG__ = cfgEl ? JSON.parse(cfgEl.textContent) : {}; }
+      catch(e){ __TYPED_CFG__ = {}; }
+      window.__TYPED_CFG__ = __TYPED_CFG__;
+    })();
+
+    function getQuotesForLang(lang) {
+      try {
+        if (typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS[lang] && TRANSLATIONS[lang].header && Array.isArray(TRANSLATIONS[lang].header.lines)) {
+          return TRANSLATIONS[lang].header.lines;
+        }
+      } catch (e) {}
+      return fallbackQuotes;
+    }
 
     function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex ;
@@ -118,19 +150,38 @@ function trackDownload(type, format) {
       return array;
     }
 
-    {% if site.shuffle %}
-      shuffle(myQuotes)
-    {% endif %}
+    function initTypedWithQuotes(quotes) {
+      if (__TYPED_CFG__.shuffle) { shuffle(quotes); }
+      $(".intro-text").typed({
+        strings: quotes,
+        typeSpeed: Number(__TYPED_CFG__.typeSpeed || 12),
+        backDelay: Number(__TYPED_CFG__.backDelay || 3500),
+        startDelay: Number(__TYPED_CFG__.startDelay || 100),
+        loop: !!__TYPED_CFG__.loop,
+        loopCount: (__TYPED_CFG__.loopCount === false ? false : Number(__TYPED_CFG__.loopCount || 0)),
+        cursorChar: "|"
+      });
+    }
 
-    $(".intro-text").typed({
-      strings: myQuotes,
-      typeSpeed: {{ site.type-speed }},
-      backDelay: {{ site.delete-delay }},
-      startDelay: {{ site.start-delay }},
-      loop: {{ site.loop }},
-      loopCount: {{ site.loop-count }},
-      cursorChar: "|"
-    });
+    // Initial init based on saved language
+    (function(){
+      var savedLang = (localStorage && localStorage.getItem('preferred-language')) || 'en';
+      var quotes = getQuotesForLang(savedLang);
+      initTypedWithQuotes(quotes);
+    })();
+
+    // Expose a reinit API for language toggle
+    window.reinitTyped = function(lang) {
+      try {
+        var quotes = getQuotesForLang(lang || 'en');
+        var $el = $(".intro-text");
+        var $clone = $el.clone().text("");
+        $el.replaceWith($clone);
+        initTypedWithQuotes(quotes);
+      } catch (e) {
+        console.warn('Reinit typed failed:', e);
+      }
+    };
   </script>
 
   <!-- Dynamic Typing End  -->
