@@ -28,13 +28,12 @@ img {
     height: auto;
 }
 
-/* 포스터 이미지를 위한 추가 스타일 */
-/*.poster {
+/* 포스터 및 반응형 스타일 (주석 처리)
+.poster {
     width: 100%;
     max-width: 100%;
 }
 
-/* 반응형 스타일 */
 @media (max-width: 768px) {
     #wrap {
         padding: 0 10px;
@@ -45,7 +44,8 @@ img {
         max-width: 100%;
         height: auto;
     }
-}*/
+}
+*/
 
 /* 추가 스타일 */
 /*
