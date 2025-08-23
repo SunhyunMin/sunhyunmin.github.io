@@ -17,6 +17,11 @@ strong {
   padding-bottom: 5px;
 }
 
+// Add vertical spacing between consecutive section headers (e.g., About page sections)
+.section-header:not(:first-of-type) {
+  margin-top: 40px;
+}
+
 .highlight-text {
   color: $highlight-color;
   font-weight: 500;

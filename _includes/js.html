@@ -98,7 +98,8 @@ function trackDownload(type, format) {
     "startDelay": {{ site.start-delay | jsonify }},
     "loop": {{ site.loop | jsonify }},
     "loopCount": {{ site.loop-count | jsonify }},
-    "shuffle": {{ site.shuffle | jsonify }}
+    "shuffle": {{ site.shuffle | jsonify }},
+    "showCursor": {{ site.show-cursor | jsonify }}
   }
   </script>
   <script type="application/json" id="header-fallback-lines">{{ site.lines | map: 'text' | jsonify }}</script>
@@ -159,11 +160,12 @@ function trackDownload(type, format) {
         startDelay: Number(__TYPED_CFG__.startDelay || 100),
         loop: !!__TYPED_CFG__.loop,
         loopCount: (__TYPED_CFG__.loopCount === false ? false : Number(__TYPED_CFG__.loopCount || 0)),
+        showCursor: (__TYPED_CFG__.showCursor !== false),
         cursorChar: "|"
       });
     }
 
-    // Initial init based on saved language
+    // Initial init based on saved language (ensures text appears on first load)
     (function(){
       var savedLang = (localStorage && localStorage.getItem('preferred-language')) || 'en';
       var quotes = getQuotesForLang(savedLang);
@@ -174,6 +176,10 @@ function trackDownload(type, format) {
     window.reinitTyped = function(lang) {
       try {
         var quotes = getQuotesForLang(lang || 'en');
+        // Ensure previous typed cursor is removed to prevent duplicates
+        if ($('.typed-cursor').length) {
+          $('.typed-cursor').remove();
+        }
         var $el = $(".intro-text");
         var $clone = $el.clone().text("");
         $el.replaceWith($clone);
