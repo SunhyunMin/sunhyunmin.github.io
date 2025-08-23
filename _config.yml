@@ -29,9 +29,9 @@ dynamic-typing: True
 shuffle: True # Shuffle the lines.
 loop: True
 loop-count: False # Set False for infinite loop, or set any number for finite loop.
-type-speed: 15
-start-delay: 150
-delete-delay: 5000
+type-speed: 12
+start-delay: 100
+delete-delay: 3500
 lines: # You can add HTML Tags in the Text
   - text: "Sunhyun MIN"
   - text: "Studying MusIc N cognition"
@@ -93,7 +93,7 @@ events:
     date: "2022 - 2023"
     description: "7T Project Manager @SKKU/IBS, PECON Lab."
   - image: "/img/timeline/baracktocat.jpg"
-    date: "2024 - Present (1st year)"
+    date: "2024 - Present (2nd year)"
     description: "M.S. Student in Metabiohealth @SKKU/IBS, BST Lab."
 # First image of the Timeline
 # timeline-img: "/img/timeline/default.png"

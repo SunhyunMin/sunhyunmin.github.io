@@ -6,8 +6,13 @@
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <h1 class="brand-heading">&nbsp;</h1>
+          {% if site.dynamic-typing %}
+          <span class="intro-text"></span>
+          {% else %}
           <span class="intro-text">{{ content }}</span>
+          {% endif %}
           <h5>&nbsp;</h5>
+          {% if site.me-img %}
           <a href="#{{ site.pages_list['About'] }}" class="page-scroll">
             {% if site.me-img contains "https://" %}
               <img class="img-me" src="{{ site.me-img }}" alt="" />
@@ -19,6 +24,7 @@
               />
             {% endif %}
           </a>
+          {% endif %}
         </div>
       </div>
     </div>
