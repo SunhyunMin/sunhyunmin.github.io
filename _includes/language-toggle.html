@@ -1,0 +1,76 @@
+<!-- Language Toggle -->
+<div class="language-toggle">
+  <a href="#" onclick="toggleLanguage('en')" class="lang-btn" id="lang-en">EN</a>
+  <span class="lang-separator">|</span>
+  <a href="#" onclick="toggleLanguage('ko')" class="lang-btn" id="lang-ko">한국어</a>
+</div>
+
+<style>
+.language-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(35, 42, 46, 0.9);
+  padding: 8px 15px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.lang-btn {
+  color: #efebd4;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.lang-btn:hover, .lang-btn.active {
+  color: #3a94c5;
+  text-decoration: none;
+}
+
+.lang-separator {
+  color: #6c757d;
+  margin: 0 8px;
+}
+
+@media (max-width: 768px) {
+  .language-toggle {
+    top: 10px;
+    right: 10px;
+    padding: 6px 12px;
+  }
+}
+</style>
+
+<script>
+// Simple language toggle functionality
+function toggleLanguage(lang) {
+  // Store language preference
+  localStorage.setItem('preferred-language', lang);
+  
+  // Update active state
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+  document.getElementById('lang-' + lang).classList.add('active');
+  
+  // Simple implementation - you can expand this for full i18n
+  if (lang === 'ko') {
+    // Show Korean elements if they exist
+    document.querySelectorAll('[data-lang="ko"]').forEach(el => el.style.display = 'block');
+    document.querySelectorAll('[data-lang="en"]').forEach(el => el.style.display = 'none');
+  } else {
+    // Show English elements
+    document.querySelectorAll('[data-lang="en"]').forEach(el => el.style.display = 'block');
+    document.querySelectorAll('[data-lang="ko"]').forEach(el => el.style.display = 'none');
+  }
+  
+  console.log('Language switched to:', lang);
+}
+
+// Initialize language on page load
+document.addEventListener('DOMContentLoaded', function() {
+  const savedLang = localStorage.getItem('preferred-language') || 'en';
+  toggleLanguage(savedLang);
+});
+</script>

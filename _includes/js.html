@@ -1,5 +1,23 @@
 <!-- Javascript Start -->
 
+<script>
+// CV Download Tracking
+function trackDownload(type, format) {
+  // Simple analytics tracking
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'file_download', {
+      'file_name': type + '_SunhyunMin.' + format.toLowerCase(),
+      'file_type': format
+    });
+  }
+  
+  // Console log for development
+  console.log('Download tracked:', type, format);
+  
+  // You can add more analytics services here
+}
+</script>
+
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
   integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="

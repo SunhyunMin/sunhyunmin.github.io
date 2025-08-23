@@ -1,0 +1,32 @@
+<!-- Scroll Progress Indicator -->
+<div class="scroll-progress">
+  <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+</div>
+
+<style>
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 9999;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #3a94c5, #5bb3d9);
+  width: 0%;
+  transition: width 0.1s ease;
+}
+</style>
+
+<script>
+window.addEventListener('scroll', function() {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  document.getElementById("scrollProgressBar").style.width = scrolled + "%";
+});
+</script>

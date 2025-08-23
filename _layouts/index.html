@@ -9,6 +9,8 @@
     data-target=".navbar-fixed-top"
     data-offset="151"
   >
+    {% include scroll-indicator.html %}
+    {% include language-toggle.html %}
     {% include navigation.html %} 
 
     {% include header.html %}
@@ -22,7 +24,9 @@
     {% endfor %} 
 
     <div class="cv-download">
-        <a href="img/CV_SunhyunMin.pdf" class="btn">CV DOWNLOAD</a>
+        <a href="img/CV_SunhyunMin.pdf" class="btn cv-btn" onclick="trackDownload('CV', 'PDF')" download>
+          <i class="fa fa-download"></i> Download CV
+        </a>
     </div>
     
     {% include footer.html %} 

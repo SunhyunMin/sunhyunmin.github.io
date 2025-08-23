@@ -1,0 +1,31 @@
+en:
+  site_title: "Sunhyun Min"
+  nav:
+    about: "About"
+    timeline: "Timeline"
+    contact: "Contact"
+  sections:
+    about_title: "About"
+    timeline_title: "Timeline" 
+    contact_title: "CV & Contact"
+  cv_download: "Download CV"
+  contact:
+    email_label: "Email"
+    lab_label: "Lab"
+    research_label: "Research"
+
+ko:
+  site_title: "민선현"
+  nav:
+    about: "소개"
+    timeline: "타임라인"
+    contact: "연락처"
+  sections:
+    about_title: "소개"
+    timeline_title: "타임라인"
+    contact_title: "이력서 및 연락처"
+  cv_download: "이력서 다운로드"
+  contact:
+    email_label: "이메일"
+    lab_label: "연구실"
+    research_label: "연구분야"
