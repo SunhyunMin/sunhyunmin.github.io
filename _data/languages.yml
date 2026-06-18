@@ -19,23 +19,23 @@ en:
       - "Studying MusIc N cognition"
       - "Sprouting More Ideas with Novelties"
 
-ko:
-  site_title: "Sunhyun Min"
-  nav:
-    about: "소개"
-    timeline: "타임라인"
-    contact: "연락처"
-  sections:
-    about_title: "소개"
-    timeline_title: "타임라인"
-    contact_title: "CV & Contact"
-  cv_download: "Download CV"
-  contact:
-    email_label: "이메일"
-    lab_label: "Lab"
-    research_label: "연구분야"
-  header:
-    lines:
-      - "Sunhyun Min"
-      - "음악과 인지를 연구합니다"
-      - "새로움으로 더 많은 아이디어를 만듭니다"
+# ko:
+#   site_title: "Sunhyun Min"
+#   nav:
+#     about: "소개"
+#     timeline: "타임라인"
+#     contact: "연락처"
+#   sections:
+#     about_title: "소개"
+#     timeline_title: "타임라인"
+#     contact_title: "CV & Contact"
+#   cv_download: "Download CV"
+#   contact:
+#     email_label: "이메일"
+#     lab_label: "Lab"
+#     research_label: "연구분야"
+#   header:
+#     lines:
+#       - "Sunhyun Min"
+#       - "음악과 인지를 연구합니다"
+#       - "새로움으로 더 많은 아이디어를 만듭니다"
