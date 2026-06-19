@@ -12,7 +12,7 @@ en:
   contact:
     email_label: "Email"
     lab_label: "Lab"
-    research_label: "Research"
+    research_label: "Research Interests"
   header:
     lines:
       - "Sunhyun Min"
